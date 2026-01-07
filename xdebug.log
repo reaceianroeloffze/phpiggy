@@ -1,0 +1,66 @@
+[10732] Log opened at 2026-01-06 15:45:55.875989
+[10732] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.10732'
+[10732] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[10732] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[10732] Log closed at 2026-01-06 15:45:56.525827
+
+[21444] Log opened at 2026-01-06 15:47:17.273417
+[21444] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.21444'
+[21444] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[21444] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[21444] Log closed at 2026-01-06 15:47:17.945258
+
+[2508] Log opened at 2026-01-06 15:49:08.821606
+[2508] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.2508'
+[2508] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[2508] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[2508] Log closed at 2026-01-06 15:49:11.975637
+
+[18768] Log opened at 2026-01-06 15:49:25.050223
+[18768] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.18768'
+[18768] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[18768] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[18768] Log closed at 2026-01-06 15:49:25.673874
+
+[22740] Log opened at 2026-01-06 20:06:58.998116
+[22740] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.22740'
+[22740] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[22740] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[22740] Log closed at 2026-01-06 20:06:59.734581
+
+[10440] Log opened at 2026-01-06 20:09:33.957802
+[10440] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.10440'
+[10440] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[10440] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[10440] Log closed at 2026-01-06 20:09:34.680783
+
+[20408] Log opened at 2026-01-06 20:11:20.951260
+[20408] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.20408'
+[20408] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[20408] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[20408] Log closed at 2026-01-06 20:20:41.804586
+
+[16788] Log opened at 2026-01-07 06:07:29.110746
+[16788] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.16788'
+[16788] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[16788] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[16788] Log closed at 2026-01-07 06:07:30.433489
+
+[10880] Log opened at 2026-01-07 06:08:26.449460
+[10880] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.10880'
+[10880] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[10880] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[10880] Log closed at 2026-01-07 06:08:28.399615
+
+[23296] Log opened at 2026-01-07 06:11:07.524272
+[23296] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.23296'
+[23296] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[23296] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[23296] Log closed at 2026-01-07 06:11:08.717367
+
+[19836] Log opened at 2026-01-07 06:31:27.099224
+[19836] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.19836'
+[19836] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[19836] [Step Debug] ERR: Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[19836] Log closed at 2026-01-07 06:31:28.326987
+
