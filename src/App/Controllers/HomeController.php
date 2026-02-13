@@ -14,11 +14,13 @@ use App\Config\Paths;
  * */
 class HomeController
 {
-    private TemplateEngine $templateEngine;
 
-    public function __construct()
+
+    public function __construct(
+        private ?TemplateEngine $templateEngine = null
+    )
     {
-        $this->templateEngine = new TemplateEngine(Paths::VIEW);
+        $this->templateEngine = $templateEngine ?? new TemplateEngine(Paths::VIEW);
     }
 
     /**

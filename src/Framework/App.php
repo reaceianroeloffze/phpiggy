@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace Framework;
 
+use App\Config\Paths;
+
 /**
  * Connect All necessary framework tools
  */
 class App
 {
-    private Router $router;
 
-    public function __construct()
+
+    public function __construct(
+        private Router $router = new Router(),
+        private Container $container = new Container(),
+    )
     {
-        $this->router = new Router();
     }
 
     /**
