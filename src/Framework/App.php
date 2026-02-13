@@ -9,10 +9,8 @@ namespace Framework;
  */
 class App
 {
-    // Properties
     private Router $router;
 
-    // Methods
     public function __construct()
     {
         $this->router = new Router();

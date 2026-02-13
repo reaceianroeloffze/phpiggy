@@ -32,3 +32,19 @@ function dd(mixed $value): void
  *     The full controller class name
  * </p>
  * */
+
+/**
+ * Escape HTML special characters with htmlspecialchars()
+ *
+ * @param mixed $value <p>
+ *     The value to escape
+ * </p>
+ *
+ * @return string <p>
+ *     The escaped value
+ * </p>
+ * */
+function e($value): string
+{
+    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+}

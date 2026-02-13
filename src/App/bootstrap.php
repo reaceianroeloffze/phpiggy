@@ -7,12 +7,14 @@
 
 declare(strict_types=1);
 
+use Framework\App;
+
+use App\Config\Routes;
+
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Framework\App;
-use App\Controllers\HomeController;
-
 $app = new App();
-$app->getRoutePath('/', [HomeController::class, 'home']);
+
+Routes::register($app);
 
 return $app;
