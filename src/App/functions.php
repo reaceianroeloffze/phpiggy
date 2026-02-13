@@ -3,7 +3,10 @@
 declare(strict_types=1);
 
 /**
- * Dumps a scalar value or print reads an array/object
+ * Dump and die
+ *
+ * Dumps a scalar value or print-reads an array/object,
+ * then kills the script
  *
  * @param mixed $value <p>
  *     The value to dump/print
@@ -22,18 +25,7 @@ function dd(mixed $value): void
 }
 
 /**
- * appends the class constant to a controller class
  *
- * @param string $controller <p>
- *     The name of the controller class
- * </p>
- *
- * @return string <p>
- *     The full controller class name
- * </p>
- * */
-
-/**
  * Escape HTML special characters with htmlspecialchars()
  *
  * @param mixed $value <p>
@@ -46,5 +38,5 @@ function dd(mixed $value): void
  * */
 function e($value): string
 {
-    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
 }
