@@ -62,9 +62,14 @@ class Router
      * @param string $method <p>
      *    The HTTP method to use
      * </p>
+     * @param Container|null $container [Optional] <p>
+     *    The container to use for dependency injection
      * */
-    public function dispatch(string $path, string $method): void
-    {
+    public function dispatch(
+        string $path,
+        string $method,
+        ?Container $container = null
+    ): void {
         $path = $this->normalisePath($path);
         $method = strtoupper($method);
 
@@ -79,7 +84,10 @@ class Router
 
             [$class, $function] = $route['controller'];
 
-            $controllerInstance = new $class();
+            // Create an instance of the controller through dependency injection
+            $controllerInstance = $container ?
+                $container->resolveDependencies($class) :
+                new $class();
 
             $controllerInstance->$function();
         }

@@ -4,20 +4,22 @@ declare(strict_types=1);
 
 namespace Framework;
 
-use App\Config\Paths;
-
 /**
  * Connect All necessary framework tools
  */
 class App
 {
 
-
     public function __construct(
-        private Router $router = new Router(),
-        private Container $container = new Container(),
-    )
-    {
+        ?string $containerDefinitionsPath = null,
+        private readonly Router $router = new Router(),
+        private readonly Container $container = new Container(),
+    ) {
+        // Add container definitions if any
+        if ($containerDefinitionsPath) {
+            $containerDefinitions = require $containerDefinitionsPath;
+            $this->container->addDefinitions($containerDefinitions);
+        }
     }
 
     /**
@@ -27,7 +29,11 @@ class App
     {
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $method = $_SERVER['REQUEST_METHOD'];
-        $this->router->dispatch($path, $method);
+        $this->router->dispatch(
+            $path,
+            $method,
+            $this->container
+        );
     }
 
     /**
