@@ -7,13 +7,13 @@ namespace Framework;
 /**
  * Connect All necessary framework tools
  */
-class App
+readonly class App
 {
 
     public function __construct(
         ?string $containerDefinitionsPath = null,
-        private readonly Router $router = new Router(),
-        private readonly Container $container = new Container(),
+        private Router $router = new Router(),
+        private Container $container = new Container(),
     ) {
         // Add container definitions if any
         if ($containerDefinitionsPath) {
@@ -49,5 +49,17 @@ class App
     public function getRoutePath(string $path, array $controller): void
     {
         $this->router->addRoutePath('GET', $path, $controller);
+    }
+
+    /**
+     * Add middleware to the router from the application instance
+     *
+     * @param string $middleware <p>
+     *     The middleware class to add
+     * </p>
+     */
+    public function addMiddleware(string $middleware): void
+    {
+        $this->router->addMiddleware($middleware);
     }
 }

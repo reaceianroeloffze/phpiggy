@@ -11,6 +11,7 @@ class Router
 {
     // Properties
     private array $routes = [];
+    private array $middlewares = [];
 
 
     /**
@@ -49,8 +50,7 @@ class Router
     {
         $path = trim($path, '/');
         $path = "/$path/";
-        $path = preg_replace('#/{2,}+#', '/', $path);
-        return $path;
+        return preg_replace('#/{2,}+#', '/', $path);
     }
 
     /**
@@ -89,7 +89,32 @@ class Router
                 $container->resolveDependencies($class) :
                 new $class();
 
-            $controllerInstance->$function();
+            $action = fn() => $controllerInstance->$function();
+
+            foreach ($this->middlewares as $middleware) {
+                $middlewareInstance = $container ?
+                    $container->resolveDependencies($middleware) :
+                    new $middleware;
+                $action = fn() => $middlewareInstance->process($action);
+            }
+
+            $action();
+
+            return;
         }
+    }
+
+    /**
+     * Add middleware to the router
+     *
+     * This middleware will be called before any controller is called
+     *
+     * @param string $middleware <p>
+     *     The middleware class to add
+     * </p>
+     * */
+    public function addMiddleware(string $middleware): void
+    {
+        $this->middlewares[] = $middleware;
     }
 }
