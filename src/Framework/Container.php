@@ -15,6 +15,7 @@ use ReflectionException;
 class Container
 {
     private array $definitions = [];
+    private array $resolvedInstances = [];
 
     /**
      * Add new definitions to the container
@@ -128,7 +129,19 @@ class Container
             );
         }
 
+        if (
+            array_key_exists(
+                $id,
+                $this->resolvedInstances
+            )
+        ) {
+            return $this->resolvedInstances[$id];
+        }
+
         $factory = $this->definitions[$id];
-        return $factory();
+        $dependency = $factory();
+        $this->resolvedInstances[$id] = $dependency;
+
+        return $dependency;
     }
 }

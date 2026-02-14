@@ -7,12 +7,12 @@ namespace Framework;
 /**
  * Dynamically render HTML pages
  * */
-readonly class TemplateEngine
+class TemplateEngine
 {
     public function __construct(
-        private string $basePath, // Absolute path to the views directory
-    )
-    {
+        private readonly string $basePath, // Absolute path to the views directory
+        private ?array $globalTemplateData = []
+    ) {
     }
 
     /**
@@ -38,6 +38,8 @@ readonly class TemplateEngine
     ): string|false {
         // Extract data into the current scope
         extract($data, EXTR_SKIP);
+        // Extract global template data into the current scope
+        extract($this->globalTemplateData, EXTR_SKIP);
 
         // Start output buffering
         ob_start();
@@ -68,5 +70,20 @@ readonly class TemplateEngine
     public function resolvePath(string $path): string
     {
         return "$this->basePath/$path";
+    }
+
+    /**
+     * Add global template data
+     *
+     * @param string $key <p>
+     *     The key to store the data under
+     * </p>
+     * @param mixed $value <p>
+     *     The value to store
+     * </p>
+     * */
+    public function addGlobal(string $key, mixed $value): void
+    {
+        $this->globalTemplateData[$key] = $value;
     }
 }

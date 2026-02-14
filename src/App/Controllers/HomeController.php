@@ -29,9 +29,6 @@ class HomeController
     {
         echo $this->templateEngine->render(
             '/index.php',
-            [
-                'title' => 'Homepage',
-            ]
         );
     }
 }
