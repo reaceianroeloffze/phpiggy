@@ -22,9 +22,6 @@ class Container
      * @param array $newDefinitions <p>
      *     An associative array of class names and their respective dependencies
      *
-     * @throws ContainerException <p>
-     *     If the class cannot be instantiated
-     * </p>
      * */
     public function addDefinitions(array $newDefinitions): void
     {
@@ -41,11 +38,16 @@ class Container
      *     The name of the class to be instantiated
      * </p>
      *
+     * @return object <p>
+     *     An instance of the class with its respective dependencies
+     * </p>
+     * *@throws ReflectionException <p>
+     *     If the class cannot be resolved
+     * </p>
      * @throws ContainerException <p>
      *     If the class cannot be instantiated
      * </p>
-     *
-     * */
+     */
     public function resolveDependencies(string $className): object
     {
         $reflectionClass = new ReflectionClass($className);
@@ -56,9 +58,13 @@ class Container
 
         $constructor = $reflectionClass->getConstructor();
 
+        if (!$constructor) {
+            return new $className;
+        }
+
         $parameters = $constructor->getParameters();
 
-        if (!$constructor || count($parameters) === 0) {
+        if (count($parameters) === 0) {
             return new $className;
         }
 
