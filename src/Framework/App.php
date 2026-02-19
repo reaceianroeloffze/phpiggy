@@ -37,7 +37,7 @@ readonly class App
     }
 
     /**
-     * Add paths to the routes array
+     * Add HTTP GET route
      *
      * @param string $path <p>
      *     The path to the file with the required contents
@@ -49,6 +49,21 @@ readonly class App
     public function getRoutePath(string $path, array $controller): void
     {
         $this->router->addRoutePath('GET', $path, $controller);
+    }
+
+    /**
+     * Add HTTP POST route
+     *
+     * @param string $path <p>
+     *     The path to the file with the required contents
+     * </p>
+     * @param array $controller <p>
+     *     The controller to be called when the route is hit along with its method
+     * </p>
+     * */
+    public function postRoutePath(string $path, array $controller): void
+    {
+        $this->router->addRoutePath('POST', $path, $controller);
     }
 
     /**

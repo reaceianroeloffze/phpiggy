@@ -5,7 +5,11 @@ declare(strict_types=1);
 namespace App\Config;
 
 use Framework\App;
-use App\Controllers\{HomeController, AboutController};
+use App\Controllers\{
+    HomeController,
+    AboutController,
+    AuthenticationController
+};
 
 /**
  * Handle the registration of routes
@@ -19,9 +23,22 @@ class Routes
     {
         // Homepage
         $app->getRoutePath(
-            '/',[HomeController::class, 'home']
+            '/',
+            [HomeController::class, 'home']
         );
         // About page
-        $app->getRoutePath('/about', [AboutController::class, 'about']);
+        $app->getRoutePath(
+            '/about',
+            [AboutController::class, 'about']
+        );
+        // Registration page
+        $app->getRoutePath(
+            '/register',
+            [AuthenticationController::class, 'registrationView']
+        );
+        $app->postRoutePath(
+            '/register',
+            [AuthenticationController::class, 'registration']
+        );
     }
 }
